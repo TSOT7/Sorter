@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 
 # Define the Downloads folder path
-downloads_folder = Path.home() / "Downloads"
+
 
 # img_path = r"C:\Users\tommy\Downloads\Imgs"
 # zip_path = r"C:\Users\tommy\Downloads\Zips"
@@ -15,38 +15,46 @@ downloads_folder = Path.home() / "Downloads"
 #     print(f"Folder '{img_path}' created successfully.")
 # else:
 #     print(f"Folder '{img_path}' already exists.")
+class FolderManager:
+    def __init__(self, base_path):
+        self.__base_path = Path.home() / "Downloads"
+        self.__folder_types = ["Images", "Zips", "Audio", "Video"]
 
-def folder_creator(): 
-    folder_types = ["Imgs", "Zips", "MP3s", "MP4s"]
-    path_template = r"C:\Users\tommy\Downloads\\"
-    folder_dict = {}
+    def create_folders(self): 
+        """
+        Create folders for the main types of files stored in the downloads folder IF they do not already exist
+        """
+        folder_path = self.__base_path
+        folder_dict = {}
 
-    for type in folder_types:
-        merged_path = path_template + type
-        if not os.path.exists(path_template + type):
-            os.mkdir(merged_path)
-            print(f"Folder {merged_path} created succesfully.")
-        else:
-            print(f"Folder {merged_path} already exists.")
-    
+        for type in self.folder_types:
+            merged_path = folder_path + type
+            if not os.path.exists(folder_path + type):
+                os.mkdir(merged_path)
+                print(f"Folder {merged_path} created succesfully.")
+            else:
+                print(f"Folder {merged_path} already exists.")
+        
 
-# # declaring file types
-# png_files = list(downloads_folder.glob("*.png"))
-# jpg_files = list(downloads_folder.glob("*.jpg"))
-# zip_files = list(downloads_folder.glob("*.zip"))
-# mp3_files = list(downloads_folder.glob("*.mp3"))
-# mp4_files = list(downloads_folder.glob("*.mp4"))
+    # # declaring file types
+    # png_files = list(downloads_folder.glob("*.png"))
+    # jpg_files = list(downloads_folder.glob("*.jpg"))
+    # zip_files = list(downloads_folder.glob("*.zip"))
+    # mp3_files = list(downloads_folder.glob("*.mp3"))
+    # mp4_files = list(downloads_folder.glob("*.mp4"))
 
-def file_sorter():
+class FileSorter:
 
-    file_types = ["png", "jpg", "zip", "mp3", "mp4"]
+    def sort_files(self):
 
-    data_type_references = {}
+        file_types = ["png", "jpg", "zip", "mp3", "mp4"]
 
-    for type in file_types:
-        data_type_references[f"{type}_files"] = list(downloads_folder.glob(f"*.{type}"))
+        data_type_references = {}
 
-    for types in data_type_references:
-        print(types)
+        for type in file_types:
+            data_type_references[f"{type}_files"] = list(downloads_folder.glob(f"*.{type}"))
 
-folder_creator()
+        for types in data_type_references:
+            print(types)
+
+
