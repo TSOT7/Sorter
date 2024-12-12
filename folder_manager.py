@@ -1,20 +1,6 @@
 from pathlib import Path
 import os
 
-# Define the Downloads folder path
-
-
-# img_path = r"C:\Users\tommy\Downloads\Imgs"
-# zip_path = r"C:\Users\tommy\Downloads\Zips"
-# img_path = r"C:\Users\tommy\Downloads\Imgs"
-# img_path = r"C:\Users\tommy\Downloads\Imgs"
-
-# Creates Imgs Folder
-# if not os.path.exists(img_path):
-#     os.mkdir(img_path)
-#     print(f"Folder '{img_path}' created successfully.")
-# else:
-#     print(f"Folder '{img_path}' already exists.")
 class FolderManager:
     def __init__(self, base_path):
         self.__base_path = Path.home() / "Downloads"

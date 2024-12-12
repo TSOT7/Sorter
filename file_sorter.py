@@ -1,13 +1,5 @@
 from pathlib import Path
 
-
-# # declaring file types
-    # png_files = list(downloads_folder.glob("*.png"))
-    # jpg_files = list(downloads_folder.glob("*.jpg"))
-    # zip_files = list(downloads_folder.glob("*.zip"))
-    # mp3_files = list(downloads_folder.glob("*.mp3"))
-    # mp4_files = list(downloads_folder.glob("*.mp4"))
-
 class FileSorter:
 
     def __init__(self):
