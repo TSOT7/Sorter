@@ -1,6 +1,6 @@
-from file_sorter import FileSorter
-from folder_manager import FolderManager
+from folder_manager import FileSorter, FolderManager
+
 
 Sorter = FileSorter()
 
-Sorter.sort_files()
+Sorter.list_sorted_files()
