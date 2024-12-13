@@ -10,6 +10,7 @@ class FolderManager:
             "zip": "Archives",
             "audio": "Audio",
             "vid": "Video",
+            "media" : "Media"
         }
 
     def get_folder_types(self):
@@ -44,13 +45,19 @@ class FileSorter:
         self.__folder_types = self.folder_manager.get_folder_types()
 
     def sort_files_by_type(self):
-        file_types = ["png", "jpg", "zip", "mp3", "mp4"]
+        file_types = ["png", "jpg", "gif", "zip", "mp3", "mp4", "7z", "rar", "exe", "epub", "pdf"]
         file_type_to_folder_key = {
             "png": "img",
             "jpg": "img",
             "zip": "zip",
+            "7z" : "zip",
+            "rar" : "zip",
+            "exe" : "zip",
             "mp3": "audio",
             "mp4": "vid",
+            "gif" : "vid",
+            "epub" : "media",
+            "pdf" : "media"
         }
 
         # Collect files by type
