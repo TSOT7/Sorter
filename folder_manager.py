@@ -70,7 +70,6 @@ class FileSorter:
                     folder_key = file_type_to_folder_key.get(file_type)
                     destination_folder = self.__base_path / self.__folder_types[folder_key]
 
-                    # Move the file
                     shutil.move(str(file), str(destination_folder / file.name))
                     print(f"Moved {file} to {destination_folder}")
 
